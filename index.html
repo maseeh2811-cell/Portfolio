@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#060b14" />
+  <meta name="description" content="Mohammed Maseehuddin Aman — Computer Science Engineer skilled in Python, data analytics, time-series analysis, AI, and web development (HTML, CSS, JavaScript)." />
+  <title>Mohammed Maseehuddin Aman | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #060b14;
+      --surface: #0d1624;
+      --surface-2: #121f33;
+      --ink: #f4f7fc;
+      --muted: #a6b4ca;
+      --teal: #6ce5d4;
+      --indigo: #9b96ff;
+      --gold: #f3c878;
+      --line: rgba(255, 255, 255, 0.12);
+      --max: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 84% 6%, rgba(155, 150, 255, 0.16), transparent 34%),
+        radial-gradient(circle at 6% 30%, rgba(108, 229, 212, 0.13), transparent 30%),
+        var(--bg);
+      line-height: 1.65;
+      overflow-x: clip;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    /* Sticky Header & Responsive Navigation */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(6, 11, 20, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: clamp(12px, 1.35vw, 17px);
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 65vw;
+    }
+
+    .brand span {
+      color: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 6px 2px;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 17px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 58px 0 68px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      background: rgba(108, 229, 212, 0.11);
+      border: 1px solid rgba(108, 229, 212, 0.34);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #5ce3a6;
+      box-shadow: 0 0 12px #5ce3a6;
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: clamp(32px, 5vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 18px 0 14px;
+      overflow-wrap: anywhere;
+    }
+
+    h1 .grad {
+      display: block;
+      background: linear-gradient(105deg, var(--teal), #8eb8ff 52%, var(--indigo));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: clamp(14.5px, 1.25vw, 16.5px);
+      max-width: 600px;
+      margin: 0;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 11px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(110deg, var(--teal), var(--indigo));
+      color: #06101b;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(108, 229, 212, 0.55);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .meta-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 18px;
+      margin-top: 22px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .meta-links a {
+      overflow-wrap: anywhere;
+    }
+
+    .meta-links a:hover {
+      color: var(--teal);
+    }
+
+    /* Profile Card */
+    .profile-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-card {
+      width: min(350px, 100%);
+      padding: 26px 22px;
+      border-radius: 26px;
+      background: linear-gradient(155deg, rgba(18, 31, 51, 0.96), rgba(10, 17, 30, 0.98));
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .avatar-ring {
+      width: clamp(150px, 34vw, 200px);
+      aspect-ratio: 1 / 1;
+      margin: 0 auto 16px;
+      padding: 5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--indigo), var(--gold));
+    }
+
+    .avatar-ring img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 14%;
+      background: #162238;
+      display: block;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      font-size: 11.5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    /* Section Layout */
+    section.block {
+      padding: 68px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: clamp(25px, 3.4vw, 38px);
+      letter-spacing: -0.03em;
+      margin: 8px 0 10px;
+      line-height: 1.18;
+    }
+
+    .sub {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 0 26px;
+      font-size: 14.5px;
+    }
+
+    /* Grids & Cards */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(150deg, rgba(20, 34, 56, 0.92), rgba(13, 22, 36, 0.96));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      min-width: 0;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .fact {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      min-width: 0;
+    }
+
+    .fact small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .fact strong {
+      font-size: 13.5px;
+      overflow-wrap: anywhere;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .skill-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      min-width: 0;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .skill-box:hover,
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(108, 229, 212, 0.45);
+    }
+
+    .skill-box h3,
+    .card h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      margin: 6px 0 5px;
+      overflow-wrap: anywhere;
+    }
+
+    .skill-box p {
+      margin: 0;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    .exp-card {
+      border-left: 3px solid var(--teal);
+    }
+
+    .meta-tag {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: 0.05em;
+    }
+
+    .bullets {
+      color: var(--muted);
+      padding-left: 18px;
+      margin: 12px 0 0;
+    }
+
+    .bullets li {
+      margin-bottom: 6px;
+    }
+
+    /* Projects */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .filter-btn {
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: #06101b;
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 205px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .pill-tag {
+      align-self: flex-start;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(243, 200, 120, 0.12);
+      border: 1px solid rgba(243, 200, 120, 0.28);
+      padding: 3px 9px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin: 8px 0 14px;
+      flex: 1;
+    }
+
+    .tech-line {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .url-preview {
+      display: block;
+      font-size: 11px;
+      color: #8eb8ff;
+      margin-bottom: 10px;
+      overflow-wrap: anywhere;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--teal);
+    }
+
+    .card-actions a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact & Footer */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      margin-bottom: 10px;
+    }
+
+    .contact-link:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-link:hover {
+      border-color: rgba(108, 229, 212, 0.5);
+    }
+
+    .contact-link small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .contact-link strong {
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    /* Tablet & Mobile Responsive Rules */
+    @media (max-width: 1024px) {
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 0 52px;
+        gap: 32px;
+      }
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .wrap {
+        width: min(var(--max), calc(100% - 28px));
+      }
+      .nav-toggle {
+        display: inline-block;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px 20px 18px;
+        background: #0d1624;
+        border-bottom: 1px solid var(--line);
+        gap: 8px;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-links a {
+        padding: 8px 4px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .grid-4,
+      .grid-3,
+      .facts {
+        grid-template-columns: 1fr;
+      }
+      .cta-row .btn {
+        flex: 1 1 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home">MOHAMMED MASEEHUDDIN AMAN<span>.</span></a>
+      <button class="nav-toggle" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="wrap hero">
+      <div>
+        <div class="badge"><span class="dot"></span> OPEN TO OPPORTUNITIES · B.TECH CSE (2024)</div>
+        <h1>Hello, I'm <span class="grad">Mohammed Maseehuddin Aman.</span></h1>
+        <p class="lead">
+          Computer Science Engineer from Hyderabad focused on Python, data analytics, time-series analysis, and AI, paired with hands-on web development using HTML, CSS, and JavaScript.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#projects">Explore Projects ↗</a>
+          <a class="btn" href="./Aman-Resume.pdf" download>↓ Download Resume PDF</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+        <div class="meta-links">
+          <span>⌖ Hyderabad, Telangana 500028</span>
+          <a href="mailto:maseeh.2811@gmail.com">✉ maseeh.2811@gmail.com</a>
+          <a href="tel:+919121345782">📞 +91 91213 45782</a>
+          <a href="https://www.linkedin.com/in/mohammed-maseehuddin-aman-10a244256/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/maseeh2811-cell" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="profile-wrap">
+        <div class="profile-card">
+          <div class="avatar-ring">
+            <img src="./profile.jpg" alt="Mohammed Maseehuddin Aman" />
+          </div>
+          <h3 style="margin: 0; font-family: 'Manrope', sans-serif;">Mohammed Maseehuddin Aman</h3>
+          <p style="margin: 4px 0 0; font-size: 13px; color: var(--teal); font-weight: 600;">Computer Science Engineer</p>
+          <div class="chip-row">
+            <span class="chip">Python</span>
+            <span class="chip">Data Analytics</span>
+            <span class="chip">Streamlit</span>
+            <span class="chip">HTML · CSS · JS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="about">
+      <div class="wrap">
+        <div class="kicker">01 / Career Objective</div>
+        <h2>Analytical mindset. Practical builder.</h2>
+        <p class="sub">Turning data into clear insights and building interactive web projects across mobile, laptop, and desktop screens.</p>
+        <div class="about-grid">
+          <article class="card">
+            <p>
+              I am a motivated and detail-oriented Computer Science Engineering graduate with foundational knowledge in Python, data analytics, artificial intelligence, and HTML, CSS, and JavaScript. I enjoy applying analytical thinking and problem-solving skills to real-world challenges, learning quickly, and contributing in collaborative environments.
+            </p>
+          </article>
+          <div class="facts">
+            <div class="fact"><small>DEGREE</small><strong>B.Tech · CSE (JNTU)</strong></div>
+            <div class="fact"><small>GRADUATED</small><strong>2024 · GPA 6.34/10</strong></div>
+            <div class="fact"><small>LOCATION</small><strong>Hyderabad, India</strong></div>
+            <div class="fact"><small>PHONE</small><strong>+91 91213 45782</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="skills">
+      <div class="wrap">
+        <div class="kicker">02 / Technical Skills</div>
+        <h2>Tools &amp; technologies.</h2>
+        <p class="sub">Core programming languages, analytics tools, databases, and developer utilities.</p>
+        <div class="grid-4">
+          <article class="skill-box"><h3>Programming</h3><p>Python, JavaScript, HTML, CSS, Node.js</p></article>
+          <article class="skill-box"><h3>Data &amp; Analytics</h3><p>Pandas, NumPy, Data Analysis, Data Modeling, Spreadsheets</p></article>
+          <article class="skill-box"><h3>Visualization &amp; BI</h3><p>Tableau, MS Excel, Streamlit Dashboards</p></article>
+          <article class="skill-box"><h3>Database</h3><p>MySQL (Basics)</p></article>
+          <article class="skill-box"><h3>Dev &amp; OS Tools</h3><p>Git, Linux, VS Code, Windows (XP/Vista/7/8/10)</p></article>
+          <article class="skill-box"><h3>Core Interests</h3><p>Artificial Intelligence, Data Science, Time-Series</p></article>
+          <article class="skill-box"><h3>Creative Design</h3><p>Adobe Photoshop (Ps)</p></article>
+          <article class="skill-box"><h3>Office Suite</h3><p>MS PowerPoint, MS Word, Excel</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="experience">
+      <div class="wrap">
+        <div class="kicker">03 / Experience</div>
+        <h2>Internship &amp; hands-on work.</h2>
+        <p class="sub">Practical experience in time-series stock market analytics and interactive visualization.</p>
+        <article class="card exp-card">
+          <div class="meta-tag">AUG 2025 — NOV 2025 · ONLINE</div>
+          <h3>Data Science &amp; Analytics Intern — Zidio Development</h3>
+          <ul class="bullets">
+            <li>Worked on a time-series stock market analysis project.</li>
+            <li>Collected, cleaned, and analyzed historical stock data using Python, Pandas, and NumPy.</li>
+            <li>Performed trend, seasonality, and noise analysis to support forecasting.</li>
+            <li>Created an interactive Streamlit dashboard to visualize results.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="projects">
+      <div class="wrap">
+        <div class="kicker">04 / Projects &amp; Links</div>
+        <h2>Featured &amp; live web projects.</h2>
+        <p class="sub">Includes my internship analytics project and all live web applications with direct links.</p>
+
+        <div class="filter-bar" id="filterBar">
+          <button class="filter-btn active" data-filter="all">All Projects (8)</button>
+          <button class="filter-btn" data-filter="analytics">Data &amp; Analytics</button>
+          <button class="filter-btn" data-filter="games">Games &amp; Quizzes</button>
+          <button class="filter-btn" data-filter="web">Web Apps &amp; UI</button>
+        </div>
+
+        <div class="grid-3" id="projectGrid">
+          <article class="card project-card" data-cat="analytics">
+            <div>
+              <span class="pill-tag">Internship Project</span>
+              <h3>Stock Market Time-Series Analysis</h3>
+              <p>Collected, cleaned, and analyzed historical stock market data; explored trend, seasonality, and noise for forecasting; built a Streamlit dashboard for visualization.</p>
+            </div>
+            <div>
+              <div class="tech-line">Python · Pandas · NumPy · Streamlit</div>
+              <span class="url-preview">https://github.com/maseeh2811-cell</span>
+              <div class="card-actions"><a href="#experience">Internship Details ↑</a><a href="https://github.com/maseeh2811-cell" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+            </div>
+          </article>
+
+          <article class="card project-card" data-cat="games">
+            <div>
+              <span class="pill-tag">Live Web App</span>
+              <h3>Quiz App</h3>
+              <p>Interactive quiz application built for testing knowledge with instant feedback and clean UI.</p>
+            </div>
+            <div>
+              <div class="tech-line">HTML · CSS · JavaScript</div>
+              <span class="url-preview">https://maseeh2811-cell.github.io/quiz/</span>
+              <div class="card-actions"><a href="https://maseeh2811-cell.github.io/quiz/" target="_blank" rel="noopener noreferrer">Open Live App ↗</a></div>
+            </div>
+          </article>
+
+          <article class="card project-card" data-cat="games">
+            <div>
+              <span class="pill-tag">Live Game</span>
+              <h3>Snake Game</h3>
+              <p>Classic arcade Snake game in the browser with score tracking and responsive controls.</p>
+            </div>
+            <div>
+              <div class="tech-line">HTML · CSS · JavaScript</div>
+              <span class="url-preview">https://maseeh2811-cell.github.io/Snake_Game/</span>
+              <div class="card-actions"><a href="https://maseeh2811-cell.github.io/Snake_Game/" target="_blank" rel="noopener noreferrer">Play Live ↗</a></div>
+            </div>
+          </article>
+
+          <article class="card project-card" data-cat="web">
+            <div>
+              <span class="pill-tag">Live Web App</span>
+              <h3>To-Do List</h3>
+              <p>Task management web app to add, track, and organize daily tasks cleanly.</p>
+            </div>
+            <div>
+              <div class="tech-line">HTML · CSS · JavaScript</div>
+              <span class="url-preview">https://maseeh2811-cell.github.io/TO-DO-LIST/</span>
+              <div class="card-actions"><a href="https://maseeh2811-cell.github.io/TO-DO-LIST/" target="_blank" rel="noopener noreferrer">Open Live App ↗</a></div>
+            </div>
+          </article>
+
+          <article class="card project-card" data-cat="web">
+            <div>
+              <span class="pill-tag">Live Web App</span>
+              <h3>Stopwatch</h3>
+              <p>Precision browser stopwatch utility with start, stop, and reset controls.</p>
+            </div>
+            <div>
+              <div class="tech-line">HTML · CSS · JavaScript</div>
+              <span class="url-preview">https://maseeh2811-cell.github.io/Stopwatch/</span>
+              <div class="card-actions"><a href="https://maseeh2811-cell.github.io/Stopwatch/" target="_blank" rel="noopener noreferrer">Open Live App ↗</a></div>
+            </div>
+          </article>
+
+          <article class="card project-card" data-cat="games">
+            <div>
+              <span class="pill-tag">Live Web App</span>
+              <h3>Quiz Game</h3>
+              <p>Interactive quiz game edition featuring structured questions and engaging gameplay.</p>
+            </div>
+            <div>
+              <div class="tech-line">HTML · CSS · JavaScript</div>
+              <span class="url-preview">https://maseeh2811-cell.github.io/Quiz-game/</span>
+              <div class="card-actions"><a href="https://maseeh2811-cell.github.io/Quiz-game/" target="_blank" rel="noopener noreferrer">Play Live ↗</a></div>
+            </div>
+          </article>
+
+          <article class="card project-card" data-cat="web">
+            <div>
+              <span class="pill-tag">Live Web App</span>
+              <h3>Expense Tracker</h3>
+              <p>Personal expense tracking web interface for recording and reviewing spending items.</p>
+            </div>
+            <div>
+              <div class="tech-line">HTML · CSS · JavaScript</div>
+              <span class="url-preview">https://maseeh2811-cell.github.io/Expense-Tracker/</span>
+              <div class="card-actions"><a href="https://maseeh2811-cell.github.io/Expense-Tracker/" target="_blank" rel="noopener noreferrer">Open Live App ↗</a></div>
+            </div>
+          </article>
+
+          <article class="card project-card" data-cat="web">
+            <div>
+              <span class="pill-tag">Live Web Profile</span>
+              <h3>Dog Profile</h3>
+              <p>Styled profile showcase page highlighting custom layout and visual presentation.</p>
+            </div>
+            <div>
+              <div class="tech-line">HTML · CSS · JavaScript</div>
+              <span class="url-preview">https://maseeh2811-cell.github.io/DOG---PROFILE/</span>
+              <div class="card-actions"><a href="https://maseeh2811-cell.github.io/DOG---PROFILE/" target="_blank" rel="noopener noreferrer">Open Live App ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="contact">
+      <div class="wrap">
+        <div class="kicker">05 / Contact</div>
+        <h2>Let's connect.</h2>
+        <p class="sub">Reach out via email, phone, LinkedIn, or GitHub for entry-level roles, analytics projects, or web work.</p>
+        <div class="contact-grid">
+          <div class="card">
+            <a class="contact-link" href="mailto:maseeh.2811@gmail.com"><span>✉</span><span><small>EMAIL</small><strong>maseeh.2811@gmail.com</strong></span></a>
+            <a class="contact-link" href="tel:+919121345782"><span>📞</span><span><small>PHONE</small><strong>+91 91213 45782</strong></span></a>
+            <a class="contact-link" href="https://www.linkedin.com/in/mohammed-maseehuddin-aman-10a244256/" target="_blank" rel="noopener noreferrer"><span>in</span><span><small>LINKEDIN</small><strong>linkedin.com/in/mohammed-maseehuddin-aman-10a244256 ↗</strong></span></a>
+            <a class="contact-link" href="https://github.com/maseeh2811-cell" target="_blank" rel="noopener noreferrer"><span>⌘</span><span><small>GITHUB</small><strong>github.com/maseeh2811-cell ↗</strong></span></a>
+          </div>
+          <div class="card" style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="kicker">READY TO CONTRIBUTE</div>
+            <h3 style="font-size: 24px;">Open to full-time &amp; internship opportunities.</h3>
+            <p style="margin-top: 8px;">Based in Hyderabad, India, and ready to collaborate on data analytics, Python, and front-end web projects.</p>
+            <div class="cta-row">
+              <a class="btn primary" href="mailto:maseeh.2811@gmail.com">Send Email ↗</a>
+              <a class="btn" href="./Aman-Resume.pdf" download>↓ Download Resume PDF</a>
+              <a class="btn" href="https://github.com/maseeh2811-cell" target="_blank" rel="noopener noreferrer">All Repositories ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="yr"></span> Mohammed Maseehuddin Aman</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const yearEl = document.getElementById("yr");
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+      }
+
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+      if (menuBtn && navLinks) {
+        menuBtn.addEventListener("click", () => {
+          const isOpen = navLinks.classList.toggle("open");
+          menuBtn.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("open");
+            menuBtn.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const projectCards = document.querySelectorAll("#projectGrid .project-card");
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const filter = btn.dataset.filter;
+          projectCards.forEach((card) => {
+            const matches = filter === "all" || card.dataset.cat === filter;
+            card.style.display = matches ? "flex" : "none";
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
